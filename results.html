@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
+</head>
+<body>
+    <h1>Restaurants That Match Your Specifications</h1>
+
+    {% if data %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Average Cost</th>
+                    <th>Proximity (minutes)</th>
+                    <th>Opens</th>
+                    <th>Closes</th>
+                    <th>Cuisine</th>
+                    <th>Meal Type</th>
+                    <th>Vegetarian Options</th>
+                    <th>Average Reviews</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for restaurant in data %}
+                    <tr>
+                        <td>{{ restaurant['name'] }}</td>
+                        <td>{{ restaurant['avgcost'] }}</td>
+                        <td>{{ restaurant['proximity'] }}</td>
+                        <td>{{ restaurant['opens'] }}</td>
+                        <td>{{ restaurant['closes'] }}</td>
+                        <td>{{ restaurant['cuisine'] }}</td>
+                        <td>{{ restaurant['type'] }}</td>
+                        <td>{{ restaurant['vegetarian'] }}</td>
+                        <td>{{ restaurant['reviews'] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No restaurants found matching your criteria.</p>
+    {% endif %}
+
+    <a href="/">Search Again!</a>
+</body>
+</html>

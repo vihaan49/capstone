@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Restaurant Finder</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}">
+</head>
+<body>
+    <h1>UIUC Restaurant Search</h1>
+    <form action="/search" method="post">
+        <label for="avgcost">Average Cost (Select 1-10, 10-20, 20-30):</label>
+        <select name="avgcost">
+            <option value="">Any</option>
+            <option value="1-10">1-10</option>
+            <option value="10-20">10-20</option>
+            <option value="20-30">20-30</option>
+        </select><br><br>
+
+        <label for="proximity">How many minutes are you willing to walk? (from the Quad):</label>
+        <input type="number" name="proximity" min="0"><br><br>
+
+        <label for="cuisine">What cuisine are you craving right now? (American, Mexican, Italian, Indian, Asian, French, Mediterranean, Cafe, Desert):</label>
+        <input type="text" name="cuisine"><br><br>
+
+        <label for="type">What type of meal are you looking for? (Authentic, Fast Food, Snack):</label>
+        <input type="text" name="type"><br><br>
+
+        <label for="vegetarian">Are you looking for a place with good vegetarian options? (yes,no):</label>
+        <input type="text" name="vegetarian"><br><br>
+
+        <label for="reviews">What is the lowest average review you are fine with?:</label>
+        <input type="number" name="reviews" step="0.1" min="0"><br><br>
+
+        <input type="submit" value="Search!">
+    </form>
+</body>
+</html>

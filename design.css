@@ -1,0 +1,23 @@
+body {
+    font-family: 'Arial';
+    background-color: #99b882;
+    color: #1f241b;
+    text-align: center;
+}
+
+form {
+    background-color: #a1c983;
+    padding: 50px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
